@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surpresa</title>
+  <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #add8e6, #f8d4e4);
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Botão com brilho dourado animado */
+    .botao-mar {
+      padding: 15px 40px;
+      font-size: clamp(16px, 4vw, 22px);
+      background-color: #f48fb1;
+      color: #ffffff;
+      border: 2px solid #ffd700;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .botao-mar:hover {
+      background-color: #e07298;
+      transform: scale(1.05);
+    }
+
+    .botao-mar::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 12px;
+      background: linear-gradient(45deg, #ffd700, #ffffff, #ffd700);
+      z-index: -1;
+      filter: blur(8px);
+      opacity: 0.5;
+      animation: brilho 2s linear infinite;
+    }
+
+    @keyframes brilho {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* Coração pulsando */
+    .coracao-pulsando {
+      font-size: 2.2em;
+      color: #ff4d6d;
+      margin-left: 12px;
+      animation: pulsar 1.2s infinite;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    @keyframes pulsar {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* Corações flutuando */
+    .coracao-flutuante {
+      position: absolute;
+      top: -40px;
+      font-size: 20px;
+      color: #ff4d6d;
+      animation: cair 6s linear infinite;
+      user-select: none;
+      z-index: 0;
+    }
+
+    @keyframes cair {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botão com coração pulsando -->
+  <div>
+    <button class="botao-mar" onclick="window.location.href='pag1.html'">
+      Clique aqui
+    </button>
+    <span class="coracao-pulsando">❤️</span>
+  </div>
+
+  <!-- Script para gerar corações flutuando -->
+  <script>
+    function criarCoracaoFlutuante() {
+      const coracao = document.createElement('div');
+      coracao.classList.add('coracao-flutuante');
+      coracao.textContent = '❤️';
+      coracao.style.left = Math.random() * 100 + 'vw';
+      coracao.style.fontSize = (Math.random() * 16 + 16) + 'px';
+      coracao.style.animationDuration = (Math.random() * 2 + 4) + 's';
+      document.body.appendChild(coracao);
+
+      setTimeout(() => {
+        coracao.remove();
+      }, 7000);
+    }
+
+    setInterval(criarCoracaoFlutuante, 400);
+  </script>
+
+</body>
+</html>

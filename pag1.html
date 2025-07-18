@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para o meu Amor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Segoe+UI:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0 20px 80px;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #f8d4e4, #ffffff);
+      text-align: center;
+    }
+
+    header {
+      margin-top: 30px;
+    }
+
+    .titulo-principal {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      color: #f1467f;
+      text-shadow: 2px 2px 4px #ffd700aa;
+      margin-bottom: 5px;
+    }
+
+    .subtitulo {
+      font-size: 1.3em;
+      color: #305070;
+      margin-bottom: 30px;
+    }
+
+    .topo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .topo-container {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    .foto-topo {
+      width: 85%;
+      max-width: 400px;
+      border-radius: 16px;
+      border: 3px solid #ffd700;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      object-fit: cover;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .mensagem {
+    margin: 40px auto 20px;
+    max-width: 800px;
+    font-size: 1.3em;
+    color: #305070;
+    background-color: #e0f7fa;
+    padding: 24px 28px;
+    border: 3px dashed #f48fb1;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    line-height: 1.8;
+    position: relative;
+    font-style: italic;
+  }
+   .mensagem::before {
+    content: "💌";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-size: 28px;
+    animation: brilhar 2s infinite alternate;
+  }
+
+  .mensagem::after {
+    content: "💖";
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 28px;
+    animation: brilhar 2s infinite alternate;
+  }
+
+    .frase-biblica {
+      margin-top: 30px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.3em;
+      color: #ff4d6d;
+      text-shadow: 2px 2px 6px #ffd70099;
+      animation: destaque 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes destaque {
+      0% { transform: scale(1); opacity: 0.9; }
+      100% { transform: scale(1.07); opacity: 1; }
+    }
+
+    .poema {
+      margin: 40px auto;
+      max-width: 700px;
+      background-color: #fff0f5;
+      border: 3px dashed #f48fb1;
+      border-radius: 12px;
+      padding: 25px;
+      font-size: 1.2em;
+      line-height: 1.7;
+      color: #222;
+      font-style: italic;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+      position: relative;
+    }
+
+    .poema::before {
+      content: "💖";
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      font-size: 30px;
+      animation: brilhar 2s infinite alternate;
+    }
+
+    .poema::after {
+      content: "🎂";
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      font-size: 30px;
+      animation: brilhar 2s infinite alternate;
+    }
+
+    @keyframes brilhar {
+      from { opacity: 0.3; transform: scale(1); }
+      to { opacity: 1; transform: scale(1.2); }
+    }
+
+    .coracao {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      color: #ff4d6d;
+      animation: cair 6s linear infinite;
+      user-select: none;
+      z-index: 10;
+    }
+
+    @keyframes cair {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    .musica audio {
+      width: 250px;
+      max-width: 90vw;
+      border: 2px solid #f48fb1;
+      border-radius: 8px;
+      background-color: #f8d4e4;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 1.2em;
+      color: #f48fb1;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="titulo-principal">Parabéns, meu amor!</div>
+    <div class="subtitulo">Hoje é o seu dia! 💖 Que ele seja tão lindo quanto o seu sorriso.</div>
+  </header>
+
+  <div class="topo-container">
+    <img id="imagemTopo" class="foto-topo" src="imagem2.jpeg" alt="Imagem especial" />
+    <div class="musica">
+      <audio id="player" controls>
+        <source src="musica.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio HTML5.
+      </audio>
+    </div>
+  </div>
+
+  <div class="mensagem">
+    Meu amor, nesses últimos meses, você tem sido a melhor coisa que me aconteceu. Você com esse jeito doce e marrento me deu mais propósito do que qualquer outra coisa. Você se tornou o meu motivo de viver, a minha maior felicidade e a esperança de um futuro com o qual eu sempre sonhei. Você me fez agradecer por tudo o que já vivi, porque tudo isso me preparou e me trouxe até aqui... Até você. E eu faria tudo de novo, e faria com prazer, porque saberia exatamente onde iria chegar. Fique sabendo que não existe tempo ruim que nos separe, eu jamais desistiria de você, do nosso amor. Agradeço muito a Deus por ter feito alguém tão perfeito e agradeço ainda mais por ter confiado você a mim. Muito obrigado por ser quem você é.
+    
+    <div class="frase-biblica">NOSSO AMOR É BÍBLICO</div>
+  </div>
+
+  <div class="topo-container"> <img class="foto-topo"  src="imagem1.jpeg" alt=""></div>
+
+  <div class="poema">
+    Se for preciso, eu pego um barco, eu remo<br>
+    Por seis meses, como peixe, pra te ver <br>
+    Tão pra inventar um mar grande o bastante<br>
+    Que me assuste e que eu desista de você
+    <br><br>
+    Se for preciso, eu crio alguma máquina <br>
+    Mais rápida que a dúvida, mais súbita que a lágrima <br>
+    Viajo a toda força, e num instante de saudade e dor <br>
+    Eu chego pra dizer que eu vim te ver
+    <br><br>
+    Eu quero partilhar<br>
+    Eu quero partilhar<br>
+    A vida boa com você<br>
+    Eu quero partilhar<br>
+    A vida boa com você ❤️
+  </div>
+
+  <footer>
+    Feito com muito amor por quem te ama infinitamente 💕
+  </footer>
+
+  <script>
+    function criarCoracao() {
+      const coracao = document.createElement('div');
+      coracao.classList.add('coracao');
+      coracao.textContent = '❤️';
+      coracao.style.left = Math.random() * 100 + 'vw';
+      coracao.style.animationDuration = (Math.random() * 2 + 4) + 's';
+      document.body.appendChild(coracao);
+
+      setTimeout(() => {
+        coracao.remove();
+      }, 6000);
+    }
+
+    setInterval(criarCoracao, 300);
+
+    const imagens = ['imagem2.jpeg','imagem3.jpeg', 'imagem4.jpeg'];
+    let indice = 0;
+    const imagem = document.getElementById('imagemTopo');
+
+    setInterval(() => {
+      imagem.style.opacity = 0;
+      setTimeout(() => {
+        indice = (indice + 1) % imagens.length;
+        imagem.src = imagens[indice];
+        imagem.style.opacity = 1;
+      }, 1000);
+    }, 5000);
+
+    const player = document.getElementById('player');
+    window.addEventListener('load', () => {
+      const tentativa = player.play();
+      if (tentativa !== undefined) {
+        tentativa.catch(() => {
+          const iniciarSom = () => {
+            player.play();
+            document.removeEventListener('click', iniciarSom);
+            document.removeEventListener('touchstart', iniciarSom);
+          };
+          document.addEventListener('click', iniciarSom);
+          document.addEventListener('touchstart', iniciarSom);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
